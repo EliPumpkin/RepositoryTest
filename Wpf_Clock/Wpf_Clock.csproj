@@ -94,6 +94,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="WOW" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
