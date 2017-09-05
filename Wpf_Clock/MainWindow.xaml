@@ -1,0 +1,10 @@
+﻿<Window x:Class="Wpf_Clock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Ellipse Width="155" Height="155" Fill="#FF7A7A7A"></Ellipse>
+        <Ellipse Width="132" Height="132" Fill="#FFDEDEDE"></Ellipse>
+        <TextBlock FontSize="{DynamicResource DemoFontSize}" Text="修改09-05-10：42"></TextBlock>
+    </Grid>
+</Window>
