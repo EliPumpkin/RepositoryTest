@@ -57,22 +57,15 @@ namespace Wpf_Clock
             object[] parameters = new object[] { "Hello" };
             //调用方法，用一个object接收返回值
             object returnValue = method.Invoke(dObj, flag, Type.DefaultBinder, parameters, null);
-            MessageBox.Show(t.ToString());
-            
+            MessageBox.Show(t.ToString());            
             //string[] aba = System.Configuration.ConfigurationManager.AppSettings["Demo"].Split(',');
-            Dictionary<string, double> m = new Dictionary<string, double>();
-            m.Add("a", 8.0);
-            m.Add("b", 9.9);
-            double max = m.Values.Max();
-            foreach (KeyValuePair<string, double> e in m)
-            {
-                if (e.Value == max)
-                {
-                    string a = e.Key;
-                }
-            }
+            MethodInfo info = t.GetMethod("Plus");
+            object[] paras = new object[] { 2, 5 };
+            object value = info.Invoke(dObj, flag, Type.DefaultBinder, paras, null);
+            MessageBox.Show(value.ToString());
             FontSizeChange();
         }
+
         private void FontSizeChange()
         {
             System.Windows.Application.Current.Resources.Remove("DemoFontSize");  
@@ -132,6 +125,10 @@ namespace TestSpace
                 else
                     return _value;
             }
+        }
+        public string Plus(int a, int b)
+        {
+            return (a + b).ToString();
         }
     }
 }
