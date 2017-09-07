@@ -1,10 +1,17 @@
 ﻿<Window x:Class="Wpf_Clock.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local ="clr-namespace:Wpf_Clock"
         Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:Human x:Key="human" Child ="ABC"/>
+        <!--<local:Human x:Key="human" Child="ABC"/>-->
+    </Window.Resources>
     <Grid>
         <Ellipse Width="155" Height="155" Fill="#FF7A7A7A"></Ellipse>
         <Ellipse Width="132" Height="132" Fill="#FFDEDEDE"></Ellipse>
         <TextBlock FontSize="{DynamicResource DemoFontSize}" Text="修改09-05-16：03"></TextBlock>
+        <Rectangle x:Name="Rec" Width="50" Height="50" VerticalAlignment="Bottom" ></Rectangle>
+        <Button Width="90" Height=" 50" HorizontalAlignment="Left" Click="Button_Click"></Button>
     </Grid>
 </Window>

@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using System.Reflection;
+using System.Threading;
+using System.Reflection;
+using System.ComponentModel;
 namespace Wpf_Clock
 {
     /// <summary>
@@ -23,7 +26,22 @@ namespace Wpf_Clock
     {
         public MainWindow()
         {
+            
             InitializeComponent();
+            SolidColorBrush brush = new SolidColorBrush ();
+            brush.Color=Colors.Blue;
+            this.Rec.Fill = brush;
+            //判断
+            bool f;
+            Mutex ml = new Mutex(true, "xxx", out f);
+            if (!f)
+            {
+                Console.WriteLine("不能同时本运行程序两次");
+                return;
+            }
+            Console.WriteLine("启动成功!");
+            Console.ReadLine();
+
             DemoTypeOf<int>();
             //获取类型信息
             Type t = Type.GetType("TestSpace.TestClass");
@@ -65,6 +83,18 @@ namespace Wpf_Clock
         {
             MessageBox.Show(typeof(X).ToString()+"||||"+typeof(List<>)+"||||"+typeof(List<X>)+"||||"+typeof(List<long>));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Human h = (Human)this.FindResource("human");
+            MessageBox.Show(h.Child.Name);
+        }
+    }
+    [TypeConverter(typeof(MyTypeConvert))]
+    public class Human
+    {
+        public string Name { get; set; }
+        public Human Child { get; set; }
     }
     
 }
