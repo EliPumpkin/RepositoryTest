@@ -20,19 +20,6 @@ namespace Wpf_Clock
             return base.ConvertFrom(context, culture, value);
         }
     }
-    class MConvert : TypeConverter
-    {
-
-        public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
-        {
-            if (value is bool)
-            {
-                if ((bool)value == true) return 1;
-                else return 0;
-            }
-            return base.ConvertFrom(context, culture, value);
-        }
-    }
     [ValueConversion(typeof(bool),typeof(int))]
     class MyValueConvert : IValueConverter
     {
