@@ -4,7 +4,7 @@
         xmlns:local ="clr-namespace:Wpf_Clock"
         Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <local:Human x:Key="human" Child ="ABC"/>
+        <!--<local:Human x:Key="human" Child ="ABC"/>-->
         <!--<local:Human x:Key="human" Child="ABC"/>-->
     </Window.Resources>
     <Grid>
@@ -12,6 +12,12 @@
         <Ellipse Width="132" Height="132" Fill="#FFDEDEDE"></Ellipse>
         <TextBlock FontSize="{DynamicResource DemoFontSize}" Text="修改09-05-16：03"></TextBlock>
         <Rectangle x:Name="Rec" Width="50" Height="50" VerticalAlignment="Bottom" ></Rectangle>
-        <Button Width="90" Height=" 50" HorizontalAlignment="Left" Click="Button_Click"></Button>
+        <Button Width="278" HorizontalAlignment="Left" Click="Button_Click" Margin="0,260,0,115">
+
+            <StackPanel>
+                <Image Source="Images/Background.jpg"></Image>
+                <TextBlock Text="Just a Test" TextWrapping="Wrap"  TextAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

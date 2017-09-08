@@ -130,5 +130,9 @@ namespace TestSpace
         {
             return (a + b).ToString();
         }
+        public T Demo<T,X>(X para) where T: class  where X :struct
+        {
+            throw new NotImplementedException();
+        }
     }
 }
