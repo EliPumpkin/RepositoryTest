@@ -63,21 +63,10 @@ namespace Wpf_Clock.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-    
-        
-        /// <summary>
-        ///   查找类似 &lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
-        ///                    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
-        ///    &lt;Style x:Key=&quot;M_TextBlock&quot; TargetType=&quot;{x:Type TextBlock}&quot;&gt;
-        ///        &lt;!--&lt;Setter Property=&quot;Background&quot; Value=&quot;#FF149CA8&quot;/&gt;--&gt;
-        ///        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot;&gt;&lt;/Setter&gt;
-        ///        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Center&quot;&gt;&lt;/Setter&gt;
-        ///        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;20&quot;&gt;&lt;/Setter&gt;
-        ///        &lt;Setter Prope [字符串的其余部分被截断]&quot;; 的本地化字符串。
-        /// </summary>
-        internal static string M_TextBlock {
+        internal static System.Drawing.Bitmap Background {
             get {
-                return ResourceManager.GetString("M_TextBlock", resourceCulture);
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

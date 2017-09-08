@@ -1,7 +1,13 @@
-﻿<Window x:Class="Wpf_Clock.Test"
+﻿<Window x:Class="Wpf_Clock.TestWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Test" Height="300" Width="440">
+        xmlns:local="clr-namespace:Wpf_Clock"
+        xmlns:Sys="clr-namespace:System;assembly=mscorlib"
+        Title="Test" Height="400" Width="440">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <local:MyValueConvert x:Key="mvc"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55*"></RowDefinition>
@@ -9,6 +15,14 @@
         </Grid.RowDefinitions>
         <ListBox Margin="5">
             <CheckBox x:Name="cb1" Content="Hello" Margin="4"></CheckBox>
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Sys:String x:Key="poem">
+                        菩提本无树
+                    </Sys:String>
+                </StackPanel.Resources>
+                <TextBlock Text="{StaticResource poem}"></TextBlock>
+            </StackPanel>
         </ListBox>
         <GroupBox Grid.Row="1" Header="请选择没有错别字的成语" BorderBrush="Black" Margin="5">
             <StackPanel Margin="5">
@@ -21,6 +35,10 @@
                     <Button Content="确定" Width="60" Margin="5"></Button>
                     <Button Content="取消" Width="60" Margin="5"></Button>
                 </StackPanel>
+                <TextBox x:Name="TB1" Text="{Binding Value, ElementName=S1}" BorderBrush="Black" Margin="5" IsReadOnly="False">
+                </TextBox>
+                <TextBox x:Name="TB2" Text="{Binding IsChecked, ConverterParameter=IsChecked, Converter={StaticResource mvc}, ElementName=cb1}" BorderBrush="Black" Margin="5"></TextBox>
+                <Slider x:Name="S1" Maximum="100" Minimum="0" Margin="5"></Slider>
             </StackPanel>
         </GroupBox>
     </Grid>

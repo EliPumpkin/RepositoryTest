@@ -79,8 +79,10 @@ namespace Wpf_Clock
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Human h = (Human)this.FindResource("human");
-            MessageBox.Show(h.Child.Name);
+            //Human h = (Human)this.FindResource("human");
+            //MessageBox.Show(h.Child.Name);
+            TestWindow tw = new TestWindow();
+            tw.ShowDialog();
         }
     }
     [TypeConverter(typeof(MyTypeConvert))]
