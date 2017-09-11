@@ -83,6 +83,13 @@ namespace Wpf_Clock
             TestWindow tw = new TestWindow();
             tw.ShowDialog();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow window = new NavigationWindow();
+            window.Source = new Uri("ButtonTest.xaml", UriKind.Relative);
+            window.Show();  
+        }
     }
     [TypeConverter(typeof(MTypeConvert))]
     public class Human

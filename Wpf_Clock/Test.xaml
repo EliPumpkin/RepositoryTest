@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Wpf_Clock"
         xmlns:Sys="clr-namespace:System;assembly=mscorlib"
-        Title="Test" Height="400" Width="440">
+        Title="Test" Height="440" Width="440">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <local:MValueConvert x:Key="mvc"/>
@@ -39,6 +39,8 @@
                 </TextBox>
                 <TextBox x:Name="TB2" Text="{Binding IsChecked, ConverterParameter=IsChecked, Converter={StaticResource mvc}, ElementName=cb1}" BorderBrush="Black" Margin="5"></TextBox>
                 <Slider x:Name="S1" Maximum="100" Minimum="0" Margin="5"></Slider>
+                <TextBox x:Name="TB3" Text="Just A Test" Margin="5" BorderBrush="Black"></TextBox>
+                <TextBox x:Name="TB4" Text="{Binding Path=car, Source=Name}" Margin="5" BorderBrush="Black"></TextBox>
             </StackPanel>
         </GroupBox>
     </Grid>

@@ -23,11 +23,16 @@ namespace Wpf_Clock
         {
             InitializeComponent();
             Car car = new Car();
-            car.SetBinding(Car.NameProperty, new Binding("text") { Source = TB1 });
-            TB2.SetBinding(TextBox.TextProperty, new Binding("Name") { Source = car });
+            car.SetBinding(Car.NameProperty, new Binding("Text") { Source = TB3 });
+            TB4.SetBinding(TextBox.TextProperty, new Binding("Name") { Source = car });
         }
         public class Car : DependencyObject
         {
+            public string Name
+            {
+                get { return (string)GetValue(NameProperty); }
+                set { SetValue(NameProperty, value); }
+            }
             public static readonly DependencyProperty NameProperty = DependencyProperty.Register("Name", typeof(string), typeof(Car));
 
             //SetBinding 包装

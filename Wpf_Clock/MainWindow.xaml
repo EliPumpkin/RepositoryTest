@@ -1,15 +1,14 @@
 ﻿<Window x:Class="Wpf_Clock.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local ="clr-namespace:Wpf_Clock"
-        xmlns:Custom="http://github.com/scheshan/bootstrap" xmlns:Views="clr-namespace:WPF.Bootstrap.Demo.Views"  
+        xmlns:local ="clr-namespace:Wpf_Clock"  
         Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--<local:Human x:Key="human" Child ="ABC"/>-->
         <!--<local:Human x:Key="human" Child="ABC"/>-->
     </Window.Resources>
     <Grid>
-        <Custom:BootstrapPanel Header="理论产量" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+        <!--<Custom:BootstrapPanel Header="理论产量" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>-->
         
         <Ellipse Width="155" Height="155" Fill="#FF7A7A7A"></Ellipse>
         <Ellipse Width="132" Height="132" Fill="#FFDEDEDE"></Ellipse>
@@ -22,5 +21,6 @@
                 <TextBlock Text="sssss" TextWrapping="Wrap"  TextAlignment="Center"></TextBlock>
             </StackPanel>
         </Button>
+        <Button Height="40" Width="60" HorizontalAlignment="Right" Content="ToPage" Click="Button_Click_1"></Button>
     </Grid>
 </Window>
