@@ -19,7 +19,7 @@
 
             <StackPanel>
                 <Image Source="Images/Background.jpg"></Image>
-                <TextBlock Text="Just a Test" TextWrapping="Wrap"  TextAlignment="Center"></TextBlock>
+                <TextBlock Text="sssss" TextWrapping="Wrap"  TextAlignment="Center"></TextBlock>
             </StackPanel>
         </Button>
     </Grid>

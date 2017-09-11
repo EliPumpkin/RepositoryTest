@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.Configuration;
 using System.Reflection;
 using System.Threading;
-using System.Reflection;
 using System.ComponentModel;
 namespace Wpf_Clock
 {
@@ -85,7 +84,7 @@ namespace Wpf_Clock
             tw.ShowDialog();
         }
     }
-    [TypeConverter(typeof(MyTypeConvert))]
+    [TypeConverter(typeof(MTypeConvert))]
     public class Human
     {
         public string Name { get; set; }

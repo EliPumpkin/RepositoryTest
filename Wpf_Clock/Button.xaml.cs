@@ -18,11 +18,24 @@ namespace Wpf_Clock
     /// <summary>
     /// Button.xaml 的交互逻辑
     /// </summary>
-    public partial class Button : Page
+    public partial class ButtonTest : Page
     {
-        public Button()
+        public ButtonTest()
         {
             InitializeComponent();
+            Car car = new Car();
+            car.SetBinding(Car.NameProperty, new Binding("text") { Source = TB1 });
+            TB2.SetBinding(TextBox.TextProperty, new Binding("Name") { Source = car });
+        }
+    }
+    public class Car : DependencyObject
+    {
+        public static readonly DependencyProperty NameProperty = DependencyProperty.Register("Name", typeof(string), typeof(Car));
+        
+        //SetBinding 包装
+        public BindingExpressionBase SetBinding(DependencyProperty dp, BindingBase binding)
+        {
+            return BindingOperations.SetBinding(this, dp, binding);
         }
     }
 }

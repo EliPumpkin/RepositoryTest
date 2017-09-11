@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Windows.Data;
 namespace Wpf_Clock
 {
-    class MyTypeConvert : TypeConverter
+    class MTypeConvert : TypeConverter
     {
         public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
         {
@@ -21,7 +21,7 @@ namespace Wpf_Clock
         }
     }
     [ValueConversion(typeof(bool),typeof(int))]
-    class MyValueConvert : IValueConverter
+    class MValueConvert : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

@@ -6,7 +6,7 @@
         Title="Test" Height="400" Width="440">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        <local:MyValueConvert x:Key="mvc"/>
+        <local:MValueConvert x:Key="mvc"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
